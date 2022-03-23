@@ -6,9 +6,15 @@ app = Dash(__name__)
 
 # 此處主要列出需要的drop down box 作為所需的內容
 labels = ['New York City', 'Montréal', 'San Francisco']
+# single choice
+# app.layout = html.Div([
+#     dcc.Dropdown(options=[{'label': x, 'value': x} for x in labels],
+#                  value='Montréal')
+# ])
+# multi choices
 app.layout = html.Div([
     dcc.Dropdown(options=[{'label': x, 'value': x} for x in labels],
-                 value='Montréal')
+                 value='Montréal', multi=True)
 ])
 
 if __name__ == '__main__':
